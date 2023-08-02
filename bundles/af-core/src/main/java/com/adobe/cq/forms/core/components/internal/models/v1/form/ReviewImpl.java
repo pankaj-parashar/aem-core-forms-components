@@ -29,7 +29,6 @@ import org.jetbrains.annotations.Nullable;
 
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
-import com.adobe.cq.forms.core.components.internal.form.FormConstants;
 import com.adobe.cq.forms.core.components.models.form.Review;
 import com.adobe.cq.forms.core.components.util.AbstractBaseImpl;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -38,7 +37,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
     adaptables = { SlingHttpServletRequest.class, Resource.class },
     adapters = { Review.class,
         ComponentExporter.class },
-    resourceType = { FormConstants.RT_FD_FORM_REVIEW_V1 })
+    resourceType = { "core/fd/components/form/review/v1/review" }) // remove hard coded string after private release
+                                                                   // FormConstants.RT_FD_FORM_REVIEW_V1
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class ReviewImpl extends AbstractBaseImpl implements Review {
 
