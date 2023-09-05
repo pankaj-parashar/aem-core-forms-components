@@ -37,6 +37,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.adobe.cq.export.json.ComponentExporter;
+import com.adobe.cq.forms.core.components.internal.form.FormConstants;
 import com.adobe.cq.forms.core.components.models.form.Base;
 import com.adobe.cq.forms.core.components.models.form.Container;
 import com.adobe.cq.forms.core.components.models.form.FormComponent;
@@ -51,8 +52,7 @@ import com.adobe.granite.ui.components.ds.ValueMapResource;
 @Component(
     service = { Servlet.class },
     property = {
-        "sling.servlet.resourceTypes=core/fd/components/form/review/v1/datasource", // remove hard coded string after private release
-                                                                                    // FormConstants.RT_FD_FORM_REVIEW_DATASOURCE_V1
+        "sling.servlet.resourceTypes=" + FormConstants.RT_FD_FORM_REVIEW_DATASOURCE_V1,
         "sling.servlet.methods=GET",
         "sling.servlet.extensions=html"
     })
