@@ -205,7 +205,7 @@
     renderReviewFields(items) {
       if (!items) return;
       const currentFragment = document.createDocumentFragment();
-      items.filter(item => item.visible !== false).forEach(item => {
+      items.filter(item => item.visible !== false && item.fieldType && item[':type']).forEach(item => {
         if (this.isRepeatable(item)) {
           const repeatablePanel = this.renderReviewFields(item.items);
           if (this.hasChild(repeatablePanel)) {
@@ -219,7 +219,9 @@
           if (item.fieldType === 'panel') {
             const fields = this.renderReviewFields(item.items);
             if (this.hasChild(fields)) {
-              currentFragment.appendChild(cloneNode);
+              if(item?.label?.visible !== false){
+                currentFragment.appendChild(cloneNode);
+              }
               currentFragment.appendChild(fields);
             }
           } else if (item.fieldType !== 'button' && !item[':type'].endsWith('review')) {
