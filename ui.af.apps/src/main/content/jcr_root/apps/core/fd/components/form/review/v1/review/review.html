@@ -26,9 +26,11 @@
   data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
 </sly>
 <div data-sly-use.formstructparser="com.adobe.cq.forms.core.components.models.form.FormStructureParser"
-  data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component" class="cmp-adaptiveform-review"
-  data-cmp-is="adaptiveFormReview" data-cmp-visible="${review.visible ? 'true' : 'false'}"
-  data-cmp-enabled="${review.enabled ? 'true' : 'false'}" id="${component.id}"
+  class="cmp-adaptiveform-review"
+  data-cmp-is="adaptiveFormReview" 
+  data-cmp-visible="${review.visible ? 'true' : 'false'}"
+  data-cmp-enabled="${review.enabled ? 'true' : 'false'}" 
+  id="${review.id}"
   data-cmp-adaptiveformcontainer-path="${formstructparser.formContainerPath}">
 
   <div data-cmp-review-intersection="${review.id}"></div>

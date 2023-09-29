@@ -80,7 +80,10 @@
     }
     #attacheIntersectionObserver() {
       let observer = new IntersectionObserver(this.intersectionObserverHandler.bind(this), Review.intersectionOptions);
-      observer.observe(this.getIntersectionElement());
+      const ele = this.getIntersectionElement();
+      if(ele){
+        observer.observe(ele);
+      }
     }
     #clickHandler(event) {
       if (event?.target?.nodeName === 'BUTTON') {
